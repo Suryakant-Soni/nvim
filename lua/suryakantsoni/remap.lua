@@ -12,4 +12,13 @@ vim.keymap.set('n', '9', '$', {noremap = true})
 
 -- Remap 'd9' to 'd$' in normal mode
 vim.keymap.set('n', 'd9', 'd$', {noremap = true})
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
+--drag the selected content up and down
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+--half page jumping and the cursor remains in the middle
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- preserve the copied word for pasting in place of the other word withoverwriting clipboard 
+vim.keymap.set("x", "<leader>p", [["_dP]])
