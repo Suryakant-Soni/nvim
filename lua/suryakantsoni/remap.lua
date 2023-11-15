@@ -21,4 +21,20 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<A-d>", "<C-d>zz")
 vim.keymap.set("n", "<A-u>", "<C-u>zz")
 -- preserve the copied word for pasting in place of the other word withoverwriting clipboard 
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<A-p>", [["_dP]])
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+
+vim.keymap.set("n", "<A-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- formats the current buffer using the lsp language configured
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- search and replace
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+--loads the vim configuration by updating it
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
+
+-- delete single character without copying into register
+keymap.set("n", "x", '"_x')
