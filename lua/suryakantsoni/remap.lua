@@ -1,12 +1,14 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
--- use jj to exit insert mode
-vim.keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jk" })
-vim.keymap.set("v", "ee", "<ESC>", { desc = "Exit visualinser toe with jk" })
+-- use option + j to escape
+vim.keymap.set('i', '<A-j>', '<Esc>', {noremap = true, silent = true})
+vim.keymap.set('n', '<A-j>', '<Esc>', {noremap = true, silent = true})
+vim.keymap.set('v', '<A-j>', '<Esc>', {noremap = true, silent = true})
+
 vim.keymap.set('n', 'J', '5j', { noremap = true, desc = "Move down 5 lines" })
 vim.keymap.set('n', 'K', '5k', { noremap = true, desc = "Move up 5 lines" })
 -- to remove the highlighted text
-vim.api.nvim_set_keymap('n', '<leader>h', ':noh<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>h', ':noh<CR>', { noremap = true, silent = true })
 -- Remap '9' to '$' in normal mode
 vim.keymap.set('n', '9', '$', {noremap = true})
 
@@ -37,4 +39,15 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- delete single character without copying into register
-keymap.set("n", "x", '"_x')
+vim.keymap.set("n", "x", '"_x')
+
+-- window management
+vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
+vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
+vim.keymap.set("n", "<leader>sc", ":close<CR>") -- close current split window
+
+vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>") -- close current tab
+vim.keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
+vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
