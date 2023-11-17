@@ -59,4 +59,14 @@ use {
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome), ex ds"/cs"'/ ysiw"(to add a new surrounding char)
   use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
+  -- commenting with gc
+  use("numToStr/Comment.nvim")
+  -- file explorer
+  use("nvim-tree/nvim-tree.lua")
+
+  -- vs-code like icons
+  use("nvim-tree/nvim-web-devicons")
+
+  -- statusline
+  use("nvim-lualine/lualine.nvim")
 end)
