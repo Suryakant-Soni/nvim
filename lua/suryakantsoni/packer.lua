@@ -44,7 +44,7 @@ use {
       {'rafamadriz/friendly-snippets'},
     }
   }
-  -- for autosave
+  -- for "autosave"
   use({
     "Pocco81/auto-save.nvim",
     config = function()
@@ -56,4 +56,7 @@ use {
   })
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
   use("szw/vim-maximizer") -- maximizes and restores current window
+  -- essential plugins
+  use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome), ex ds"/cs"'/ ysiw"(to add a new surrounding char)
+  use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 end)

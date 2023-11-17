@@ -178,6 +178,11 @@ _G.packer_plugins = {
     path = "/Users/suryakantsoni/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-ReplaceWithRegister"] = {
+    loaded = true,
+    path = "/Users/suryakantsoni/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
+    url = "https://github.com/inkarkat/vim-ReplaceWithRegister"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/suryakantsoni/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -187,6 +192,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/suryakantsoni/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/suryakantsoni/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,

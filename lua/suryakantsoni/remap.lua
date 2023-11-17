@@ -56,7 +56,7 @@ vim.keymap.set("n", "<leader>sc", ":close<CR>") -- close current split window
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- run packersync
-vim.keymap.set('n', '<leader>ps', ':PackerSync<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>sy', ':PackerSync<CR>', { noremap = true, silent = true })
 
 -- Paste below the current line
 vim.keymap.set('n', '<leader>pd', ':put<CR>', {noremap = true, silent = true})
