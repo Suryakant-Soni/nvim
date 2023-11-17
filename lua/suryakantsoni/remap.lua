@@ -1,9 +1,9 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- use option + j to escape
-vim.keymap.set('i', '<A-j>', '<Esc>', {noremap = true, silent = true})
-vim.keymap.set('n', '<A-j>', '<Esc>', {noremap = true, silent = true})
-vim.keymap.set('v', '<A-j>', '<Esc>', {noremap = true, silent = true})
+vim.keymap.set('i', '<A-u>', '<Esc>', {noremap = true, silent = true})
+vim.keymap.set('n', '<A-u>', '<Esc>', {noremap = true, silent = true})
+vim.keymap.set('v', '<A-u>', '<Esc>', {noremap = true, silent = true})
 
 vim.keymap.set('n', 'J', '5j', { noremap = true, desc = "Move down 5 lines" })
 vim.keymap.set('n', 'K', '5k', { noremap = true, desc = "Move up 5 lines" })
@@ -22,8 +22,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --half page jumping and the cursor remains in the middle
 vim.keymap.set("n", "<A-d>", "<C-d>zz")
 vim.keymap.set("n", "<A-u>", "<C-u>zz")
--- preserve the copied word for pasting in place of the other word withoverwriting clipboard 
-vim.keymap.set("x", "<A-p>", [["_dP]])
+-- preserve the copied word for pasting in place of the other word withoverwriting clipboard , commneting because using replaceregisters now
+-- vim.keymap.set("x", "<A-p>", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<A-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -46,8 +46,20 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 vim.keymap.set("n", "<leader>sc", ":close<CR>") -- close current split window
+-- below shortcuts are not working
+-- vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+-- vim.keymap.set("n", "<leader>tc", ":tabclose<CR>") -- close current tab
+-- vim.keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
+-- vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-vim.keymap.set("n", "<leader>tc", ":tabclose<CR>") -- close current tab
-vim.keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+-- vim-maximizer
+vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
+
+-- run packersync
+vim.keymap.set('n', '<leader>ps', ':PackerSync<CR>', { noremap = true, silent = true })
+
+-- Paste below the current line
+vim.api.nvim_set_keymap('n', '<leader>pd', ':put<CR>', {noremap = true, silent = true})
+
+-- Paste above the current line
+vim.api.nvim_set_keymap('n', '<leader>pu', ':put!<CR>', {noremap = true, silent = true})

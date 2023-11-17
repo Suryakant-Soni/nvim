@@ -39,19 +39,21 @@ use {
 		  {'hrsh7th/cmp-nvim-lsp'},
 		  {'hrsh7th/cmp-nvim-lua'},
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
   }
   -- for autosave
-use({
-	"Pocco81/auto-save.nvim",
-	config = function()
-		 require("auto-save").setup {
-			-- your config goes here
-			-- or just leave it empty :)
-		 }
-	end,
-})
+  use({
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        -- your config goes here
+        -- or just leave it empty :)
+      }
+    end,
+  })
+  use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+  use("szw/vim-maximizer") -- maximizes and restores current window
 end)
