@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
--- use option + j to escape
+-- use option + u to escape
 vim.keymap.set('i', '<A-u>', '<Esc>', {noremap = true, silent = true})
 vim.keymap.set('n', '<A-u>', '<Esc>', {noremap = true, silent = true})
 vim.keymap.set('v', '<A-u>', '<Esc>', {noremap = true, silent = true})
@@ -22,8 +22,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --half page jumping and the cursor remains in the middle
 vim.keymap.set("n", "<A-d>", "<C-d>zz")
 vim.keymap.set("n", "<A-u>", "<C-u>zz")
--- preserve the copied word for pasting in place of the other word withoverwriting clipboard , commneting because using replaceregisters now
--- vim.keymap.set("x", "<A-p>", [["_dP]])
+-- preserve the copied word for pasting in place of the other word withoverwriting clipboard 
+vim.keymap.set("x", "<A-p>", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<A-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -59,7 +59,7 @@ vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window
 vim.keymap.set('n', '<leader>ps', ':PackerSync<CR>', { noremap = true, silent = true })
 
 -- Paste below the current line
-vim.api.nvim_set_keymap('n', '<leader>pd', ':put<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>pd', ':put<CR>', {noremap = true, silent = true})
 
 -- Paste above the current line
-vim.api.nvim_set_keymap('n', '<leader>pu', ':put!<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>pu', ':put!<CR>', {noremap = true, silent = true})
