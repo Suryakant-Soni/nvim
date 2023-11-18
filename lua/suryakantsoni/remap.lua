@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- use option + u to escape
 vim.keymap.set('i', '<A-u>', '<Esc>', {noremap = true, silent = true})
 vim.keymap.set('n', '<A-u>', '<Esc>', {noremap = true, silent = true})
@@ -34,9 +34,9 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --loads the vim configuration by updating it
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+-- vim.keymap.set("n", "<leader><leader>", function()
+--     vim.cmd("so")
+-- end)
 
 -- delete single character without copying into register
 vim.keymap.set("n", "x", '"_x')
@@ -63,3 +63,17 @@ vim.keymap.set('n', '<leader>pd', ':put<CR>', {noremap = true, silent = true})
 
 -- Paste above the current line
 vim.keymap.set('n', '<leader>pu', ':put!<CR>', {noremap = true, silent = true})
+-- nvim-tree
+vim.keymap.set("n", "<leader>eo", ":NvimTreeToggle<CR>") -- toggle file explorer
+vim.keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>") -- toggle file explorer
+vim.keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>") -- toggle file explorer
+-- telescope
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
+vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
+-- telescope git commands (not on youtube nvim video)
+vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+vim.keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
+vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
